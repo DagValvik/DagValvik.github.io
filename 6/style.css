@@ -1,0 +1,100 @@
+
+.card {
+    border: 2px solid black;
+    background-color: white;
+    transition: transform 0.6s;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.outer {
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 200px;
+}
+
+.card.back {
+    z-index: 2;
+    backface-visibility: hidden;
+}
+
+.card.front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card img {
+    width: 90%;
+    height: 90%;
+}
+
+.header {
+    display: inline-flex;
+    width: 100%;
+    background-color: aquamarine;
+}
+
+.select {
+    display: flex;
+}
+h2{
+    width: 100%;
+    text-align: center;
+}
+
+#themes {
+    display: inline-flex;
+    width: 100%;
+}
+.button{
+    position: relative;
+    margin: 5px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border: black 2px;
+    border-radius: 2px;
+    background-color: cyan;
+    color: black;
+
+}
+
+.player1{
+    position: relative;
+    margin: 25px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+.player2 {
+    position: relative;
+    margin: 25px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+.timer {
+    position: relative;
+    margin: 25px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+.cards {
+    display: inline-flex;
+    width: 800px;
+    height: 800 px;
+    margin: 5px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.container{
+    text-align: center;
+    width: 100%;
+}

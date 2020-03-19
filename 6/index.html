@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Import Vue -->
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+
+    <script src="card.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Example</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <div class="player1">
+          <h1>Player 1:</h1>
+          <div>
+            <span class="label">Turns:</span>
+            <span class="value">{{ player1.turns }} </span>
+          </div>
+          <div>
+            <span class="label">Score:</span>
+            <span class="value">{{ player1.score }} </span>
+          </div>
+        </div>
+        <div class="timer">
+          <h1>{{ time }}</h1>
+          <button v-on:click="startGame()">Press here to start</button>
+        </div>
+        <div class="player2">
+          <h1>Player 2:</h1>
+          <div>
+            <span class="label">Turns:</span>
+            <span class="value">{{ player2.turns }} </span>
+          </div>
+          <div>
+            <span class="label">Score:</span>
+            <span class="value">{{ player2.score }} </span>
+          </div>
+        </div>
+      </div>
+      <div class="select">
+        <h2>Select theme to play with</h2>
+      </div>
+      <div id="themes">
+        <button class="button" name="brands" v-on:click="brands()">
+          Popular Brands
+        </button>
+        <button class="button" name="pokemon" v-on:click="pokemon()">
+          Pokemon
+        </button>
+        <button class="button" name="sex positions" v-on:click="sex()">
+          Sex Positions
+        </button>
+      </div>
+      <div class="displaywinner">
+        <h2 v-if="finished">
+          <p v-if="winner">The winner is {{winner}}</p>
+          <p v-else>This is a draw</p>
+        </h2>
+      </div>
+      <div class="container">
+        <div class="cards">
+          <my-card
+            v-for="card in cards"
+            v-bind:image="card"
+            v-on:addtoflipped="addToFlipped($event)"
+          ></my-card>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
